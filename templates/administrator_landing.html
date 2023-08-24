@@ -1,0 +1,274 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>JPIS Activities</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Hidayah - v2.0.0
+  * Template URL: https://bootstrapmade.com/hidayah-free-simple-html-template-for-corporate/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+<style>
+
+body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  width: 500px;
+}
+
+
+input[type=search] {
+  display: inline-block;
+  position: fixed;
+
+}
+body {
+  background-color: rgba(33, 37, 41, 1)!important;
+}
+  .main {
+
+      width: 71%;
+      background-color: beige;
+      padding: 2%;
+      margin: 0 auto;
+      min-height: 400px;
+    }
+
+th, table {
+  text-align: center;
+  font-size: 15px;
+}
+
+#hero {
+height: 100%!important;
+}
+
+th {
+  background-color: teal;
+  color: white;
+
+}
+
+td {
+  color: teal;
+}
+
+h3 {
+  text-align: center;
+}
+  p {
+    font-size: 15px;
+  }
+
+  hr.solid {
+  border-top: 3px thin black;
+  }
+  #main {
+    transition: margin-left .5s;
+    padding: 0px;
+}
+
+.input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group {
+background-color: rgba(169, 164, 157, 0.5);
+}
+
+
+
+p {
+  color: black!important;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+
+
+
+h2 {
+  color: black;
+}
+
+
+header {
+  background-color: rgba(34, 39, 43, 0.8);
+}
+</style>
+</head>
+
+<body>
+
+
+
+  <!-- ======= Header ======= -->
+<div id="main">
+  <header id="header" >
+    <div class="container-fluid">
+
+      <div class="row justify-content-center">
+        <div class="col-xl-10 d-flex align-items-center justify-content-end">
+          <li> </li>
+          <li> </li>
+
+          <h1 class="logo mr-auto"><a href="/">JPIS Activities</a></h1>
+
+
+          <nav class="nav-menu d-none d-lg-block">
+            <ul>
+              <!--next thing put the excel sheet link for all the meetings-->
+
+              <li><a href="/all-meetings-info/">All Meetings Info</a></li>
+              <li> <a href="/user/">{{user}}</a></li>
+              <li> <a href="/logout/">Logout</a></li>
+              <li> </li>
+            </ul>
+          </nav><!-- .nav-menu -->
+        </div>
+      </div>
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="main">
+      <h1 style="text-align: center;"> Welcome {{user.f_name}} </h1>
+      <h3 style="text-align: center;"> Select Organization To Get More Details </h3>
+      <br>
+      <div class="input-group">
+        <input type="search" id='search' class="form-control" placeholder="Organization Search" name="search">
+        <div class="search-container">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+      <br>
+      <br>
+      {% if unapproved_applications %}
+        <h3> Activities Yet to Approve/Reject </h3>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Organization Name</th>
+              <th scope="col">Leader Name</th>
+              <th scope="col">Advisor Name</th>
+              <th scope="col">Mission Statement</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for x in unapproved_applications %}
+              <tr>
+                <td id='title'><a href="/applications/{{x.id}}/">{{x.org_name}}</a></td>
+                <td>{{x.leader1}}</td>
+                <td>{{x.advisor_name}}</td>
+                <td>{{x.mission_statement}}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% endif %}
+      {% if approved_applications %}
+        <h3> Approved Activities </h3>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Organization Name</th>
+              <th scope="col">Leader Name</th>
+              <th scope="col">Advisor Name</th>
+              <th scope="col">Mission Statement</th>
+              <th scope="col">Remove Activity</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for x in approved_applications %}
+              <tr>
+                <td id='title'>{{x.org_name}}</td>
+                <td>{{x.leader1}}</td>
+                <td>{{x.advisor_name}}</td>
+                <td>{{x.mission_statement}}</td>
+                <td><a href="/remove-activity/{{x.id}}/">Remove Activity </a></td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% endif %}
+
+
+
+    </div>
+  </section><!-- End Hero -->
+
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+   <!-- Vendor JS Files -->
+   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+   <script src="{% static 'vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+   <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+   <script src="{% static 'vendor/venobox/venobox.min.js' %}"></script>
+   <script src="{% static 'vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+   <script src="{% static 'vendor/counterup/counterup.min.js' %}"></script>
+   <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+   <script src="{% static 'vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+
+   <!-- Template Main JS File -->
+   <script src="{% static 'js/main.js' %}"></script>
+
+   <script>
+     $('#search').keyup(function() {
+   var regex = new RegExp($('#search').val(), "i");
+   var rows = $('table tr:gt(0)');
+   rows.each(function (index) {
+     title = $(this).children("#title").html()
+     if (title.search(regex) != -1) {
+       $(this).show();
+     } else {
+       $(this).hide();
+     }
+   });
+   });
+ </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Event
+{% endblock %}
+
+{% block content %}
+<div class="clearfix">
+  <a class="btn btn-info left" href="{% url 'calendarapp:calendar' %}"> Calendar </a>
+</div>
+
+<form method="post">
+  {% csrf_token %}
+  {% if activity_not_there %}
+    <div class="alert alert-danger" role="alert">
+      Please Enter the Name of one of your organizations from the list exactly as is in the activity input box
+    </div>
+  {% endif %}
+  {% if error_message4 %}
+    <div class="alert alert-danger" role="alert">
+      {{error_message4}}
+    </div>
+  {% endif %}
+
+  <h4 style="text-align:center"> Your activities </h4>
+  {% for activity in activities%}
+    <li style="text-align:center"> {{activity}} </li>
+  {% endfor %}
+  <br>
+  <table class="form form-table">
+    {{ form }}
+    <tr><td colspan="2"><button type="submit" class="btn btn-info right"> Submit </button></td></tr>
+  </table>
+</form>
+{% endblock %}

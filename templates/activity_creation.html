@@ -1,0 +1,373 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>JPIS Activities</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href= "{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <!-- =======================================================
+  * Template Name: Hidayah - v2.0.0
+  * Template URL: https://bootstrapmade.com/hidayah-free-simple-html-template-for-corporate/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+<style>
+
+body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+
+}
+
+input.form-check-input{
+  text-align: center!important;
+}
+
+#hero {
+height: 100%!important;
+}
+
+h3 {
+  text-align: center;
+}
+  p {
+    font-size: 15px;
+    color: inherit!important;
+  }
+
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+
+  hr.solid {
+  border-top: 3px thin black;
+  }
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+
+.input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group {
+background-color: rgba(169, 164, 157, 0.5);
+}
+
+body
+* {box-sizing: border-box;}
+
+
+body {
+  line-height: 0.01!important;
+}
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+
+
+/* Float cancel and signup buttons and add an equal width */
+.signupbtn {
+  float: center;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+body {
+  background-color: #474e5d;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+
+/* The Close Button (x) */
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+  .main {
+      width: 80%;
+      padding-top: 50px;
+      margin: 0 auto;
+      min-height: 400px;
+      text-align: left;
+      vertical-align: inherit;
+    }
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+
+/*textarea {
+  margin-top: 0px!important;
+  margin-bottom: 0px!important;
+  height: 100px!important;
+}
+*/
+
+</style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container-fluid">
+
+      <div class="row justify-content-center">
+        <div class="col-xl-10 d-flex align-items-center justify-content-end">
+
+          <h1 class="logo mr-auto"><a href="/">JPIS Activities</a></h1>
+
+
+        </div>
+      </div>
+    </div>
+
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+
+      <div class="main">
+        <form class="modal-content" action="" method="POST"> {% csrf_token %}
+          <div class="container">
+            <h1>Charter An Activity</h1>
+            {% if error_message3 %}
+              <div class="alert alert-danger" role="alert">
+                <strong>Error!</strong> {{error_message3}}
+              </div>
+            {% endif %}
+
+            <hr>
+            <label for="text"><b>Organization Name</b></label>
+            <input type="text" name="org_name" required>
+
+            <label for="email"><b>Email</b></label>
+            <input type="email" class="form-control" placeholder="Enter Email" name="email" required>
+            <p></p>
+
+            <label for="text">Select 3 at most that best describe your activity</label>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <select name="tag1" class="form-control" required>
+                  <option disabled selected>Choose...</option>
+                  <option> Arts and Design  </option>
+                  <option>  Club sports & Recreational Games  </option>
+                  <option>  Volunteering and NGO   </option>
+                  <option> Music </option>
+                  <option> Cultural </option>
+                  <option> STEM </option>
+                </select>
+              </div>
+              <div class="form-group col-md-4">
+                <select name="tag2" class="form-control">
+                  <option disabled selected>Choose...</option>
+                  <option> Arts and Design  </option>
+                  <option>  Club sports & Recreational Games  </option>
+                  <option>  Volunteering and NGO   </option>
+                  <option> Music </option>
+                  <option> Cultural </option>
+                  <option> STEM </option>
+                </select>
+              </div>
+              <div class="form-group col-md-2">
+                <select name="tag3" class="form-control">
+                  <option disabled selected>Choose...</option>
+                  <option> Arts and Design  </option>
+                  <option>  Club sports & Recreational Games  </option>
+                  <option>  Volunteering and NGO   </option>
+                  <option> Music </option>
+                  <option> Cultural </option>
+                  <option> STEM </option>
+                </select>
+                </div>
+            </div>
+
+            <p></p>
+            <label for="role"><b>Commitment Level</b></label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="commitment" id="inlineRadio1" value="low" required>
+              <label class="form-check-label" for="inlineRadio1">Low</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="commitment" id="inlineRadio2" value="medium">
+              <label class="form-check-label" for="inlineRadio2">Medium</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="commitment" id="inlineRadio2" value="high">
+              <label class="form-check-label" for="inlineRadio2">High</label>
+            </div>
+
+            <hr>
+
+            <label for="email"><b>Number of Meetings in a week</b></label>
+            <input type="text" name="num_times" required>
+
+            <!--This will also all be in one row -->
+            <p>Note: Only leader #1 will have all the functionalities of accepting join requests, creation of meetings etc.</p>
+            <p>&nbsp</p>
+            <p>&nbsp</p>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="text"><b>Leader#1 Username (required)</b></label>
+                <input type="text" name="leader1" required>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="text"><b>Leader#2 Username </b></label>
+                <input type="text" name="leader2">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="text"><b>Leader#3 Username </b></label>
+                <input type="text" name="leader3">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="text"><b>Leader#4 Username  </b></label>
+                <input type="text" name="leader4">
+              </div>
+            </div>
+            <label for="text"><b>Advisor Name:</b></label>
+            <select name="advisor" class="form-control">
+              <option disabled selected>Choose...</option>
+              <option> Teacher 1  </option>
+              <option>  Teacher 2  </option>
+              <option>  Teacher 3  </option>
+              <option> Teacher 4 </option>
+            </select>
+            <hr>
+
+            <label for="text"><b>Mission Statement: No more than one sentence describing purpose of club existence</b></label>
+            <input type="text" name="mission_statement">
+
+            <label for="text">Organization’s purpose: No more than 150 words. This will be the official description of club and what is to be expected of members<b></label>
+            <p></p>
+            <textarea cols="120" rows="3" name ="description" class="form-control" required></textarea>
+
+
+
+            <p></p>
+            <p></p>
+            <p></p>
+
+
+            <label for="text">Protocols: What are appointment to leadership and impeachment protocols?<b></label>
+            <p></p>
+            <textarea cols="120" rows="3" name ="protocols" class="form-control" required></textarea>
+
+
+            <div class="clearfix">
+              <button type="submit" class="signupbtn" name="action" value="sub">Create</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+ <!-- Vendor JS Files -->
+ <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+ <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+ <script src="{% static 'vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+ <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+ <script src="{% static 'vendor/venobox/venobox.min.js' %}"></script>
+ <script src="{% static 'vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+ <script src="{% static 'vendor/counterup/counterup.min.js' %}"></script>
+ <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+ <script src="{% static 'vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+
+ <!-- Template Main JS File -->
+ <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

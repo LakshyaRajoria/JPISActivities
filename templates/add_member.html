@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Add EventMember
+{% endblock %}
+
+{% block content %}
+<div class="clearfix">
+  <a class="btn btn-info left" href="{% url 'calendarapp:calendar' %}"> Calendar </a>
+</div>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <table class="form form-table">
+    <select name="user" required id="id_user">
+      <option selected>---------</option>
+      {% for member in members %}
+        <option>{{member.username}}</option>
+      {% endfor %}
+    </select>
+
+    <tr><td colspan="2"><button type="submit" class="btn btn-info right"  name="action" value="sub"> Submit </button></td></tr>
+  </table>
+</form>
+{% endblock %}
